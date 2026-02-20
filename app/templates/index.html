@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Churn Prediction</title>
+</head>
+<body>
+    <h2>Churn Prediction</h2>
+
+    <form action="/predict" method="POST">
+
+        <label>Contract:</label>
+        <input type="text" name="Contract"><br><br>
+
+        <label>Payment Method:</label>
+        <input type="text" name="PaymentMethod"><br><br>
+
+        <label>Internet Service:</label>
+        <input type="text" name="InternetService"><br><br>
+
+        <label>Monthly Charges:</label>
+        <input type="text" name="MonthlyCharges"><br><br>
+
+        <label>Tenure:</label>
+        <input type="text" name="tenure"><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction_result %}
+        <h3>Result: {{ prediction_result }}</h3>
+    {% endif %}
+
+    <br>
+    <a href="/logout">Logout</a>
+</body>
+</html>
